@@ -12,7 +12,7 @@ COPY ./cleanup.sh /tmp_install/cleanup.sh
 RUN cd /tmp_install && \
     ls && \
     source /opt/rh/devtoolset-3/enable && \
-#    . /tmp_install/run-cvmfs-install.sh && \
-#    /tmp_install/cleanup.sh && \
-#    rm -rf /tmp_install && \
+    . /tmp_install/run-cvmfs-install.sh && \
+    /tmp_install/cleanup.sh && \
+    rm -rf /tmp_install && \
     /bin/true

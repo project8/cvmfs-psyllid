@@ -62,31 +62,37 @@ echo "Scarab ready for linking"
 echo "Prepare Midge"
 wget -O midge-${MIDGE_BRANCH}.zip ${MIDGE_URL} --output-file=wget_log.txt --tries=3
 unzip -q midge-${MIDGE_BRANCH}.zip
+rmdir ${P8PSYLLIDDIR}/src/Psyllid/midge
 mv midge-${MIDGE_BRANCH} ${P8PSYLLIDDIR}/src/Psyllid/midge
+rmdir ${P8PSYLLIDDIR}/src/Psyllid/midge/scarab
 ln -s ${P8PSYLLIDDIR}/src/scarab ${P8PSYLLIDDIR}/src/Psyllid/midge/scarab
 echo "Midge is done!"
 
 echo "Prepare Monarch"
 wget -O monarch-${MONARCH_BRANCH}.zip ${MONARCH_URL} --output-file=wget_log.txt --tries=3
 unzip -q monarch-${MONARCH_BRANCH}.zip
+rmdir ${P8PSYLLIDDIR}/src/Psyllid/monarch
 mv monarch-${MONARCH_BRANCH} ${P8PSYLLIDDIR}/src/Psyllid/monarch
+rmdir ${P8PSYLLIDDIR}/src/Psyllid/monarch/Scarab
 ln -s ${P8PSYLLIDDIR}/src/scarab ${P8PSYLLIDDIR}/src/Psyllid/monarch/Scarab
 echo "Monarch is done!"
 
 echo "Prepare Dripline-cpp"
 wget -O dripline-cpp-${DRIPLINE_CPP_BRANCH}.zip ${DRIPLINE_CPP_URL} --output-file=wget_log.txt --tries=3
 unzip -q dripline-cpp-${DRIPLINE_CPP_BRANCH}.zip
+rmdir ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp
 mv dripline-cpp-${DRIPLINE_CPP_BRANCH} ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp
+rmdir ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp/scarab
 ln -s ${P8PSYLLIDDIR}/src/scarab ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp/scarab
 echo "... SimpleAmqpClient for Dripline-cpp"
 wget -O simpleamqpclient-${SIMPLEAMQPCLIENT_BRANCH}.zip ${SIMPLEAMQPCLIENT_URL} --output-file=wget_log.txt --tries=3
 unzip -q simpleamqpclient-${SIMPLEAMQPCLIENT_BRANCH}.zip
-mkdir -p ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp/SimpleAmqpClient
+rmdir ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp/SimpleAmqpClient
 mv SimpleAmqpClient-${SIMPLEAMQPCLIENT_BRANCH} ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp/SimpleAmqpClient
 echo "... ... googletest for SimpleAmqpClient for Dripline-cpp"
 wget -O googletest-${GOOGLETEST_BRANCH}.zip ${GOOGLETEST_URL} --output-file=wget_log.txt --tries=3
 unzip -q googletest-${GOOGLETEST_BRANCH}.zip
-mkdir -p ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp/SimpleAmqpClient/third-party/googletest
+rmdir ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp/SimpleAmqpClient/third-party/googletest
 mv googletest-${GOOGLETEST_BRANCH} ${P8PSYLLIDDIR}/src/Psyllid/dripline-cpp/SimpleAmqpClient/third-party/googletest
 echo "Dripline-cpp is done!"
 
